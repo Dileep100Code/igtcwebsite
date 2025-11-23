@@ -1,0 +1,80 @@
+.section {
+  padding: var(--spacing-xl) 0;
+  background-color: var(--color-surface);
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.title {
+  text-align: center;
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.sponsorCard {
+  background-color: var(--color-background);
+  border-radius: 12px;
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border: 2px solid transparent;
+  min-height: 120px;
+}
+
+.sponsorCard:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.logo {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter var(--transition-base);
+}
+
+.sponsorCard:hover .logo {
+  filter: grayscale(0%);
+}
+
+.sponsorCard.platinum {
+  grid-column: span 2;
+}
+
+.sponsorCard.platinum .logo {
+  max-height: 100px;
+}
+
+.sponsorCard.gold .logo {
+  max-height: 80px;
+}
+
+.sponsorCard.silver .logo {
+  max-height: 60px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sponsorCard.platinum {
+    grid-column: span 2;
+  }
+}

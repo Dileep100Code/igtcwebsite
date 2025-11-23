@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import * as fc from 'fast-check';
 import { NewsSection } from './NewsSection';
-import { NewsCardProps } from './NewsCard';
+import type { NewsCardProps } from './NewsCard';
 
 // Feature: igtc-esports-website, Property 4: News card required fields
 // Feature: igtc-esports-website, Property 5: News chronological ordering

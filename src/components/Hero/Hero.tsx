@@ -17,7 +17,6 @@ interface HeroProps {
 export const Hero = ({ 
   title, 
   subtitle, 
-  backgroundImage,
   ctaButtons = []
 }: HeroProps) => {
   return (

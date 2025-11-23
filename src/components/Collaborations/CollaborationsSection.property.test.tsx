@@ -1,7 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import * as fc from 'fast-check';
-import { CollaborationsSection, Collaboration } from './CollaborationsSection';
+import { CollaborationsSection } from './CollaborationsSection';
+import type { Collaboration } from './CollaborationsSection';
 
 // Feature: igtc-esports-website, Property 10: Collaboration card content
 // Feature: igtc-esports-website, Property 11: Collaboration interaction response

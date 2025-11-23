@@ -1,7 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/react';
 import * as fc from 'fast-check';
-import { SponsorsSection, Sponsor } from './SponsorsSection';
+import { SponsorsSection } from './SponsorsSection';
+import type { Sponsor } from './SponsorsSection';
 
 // Feature: igtc-esports-website, Property 8: Sponsor tier differentiation
 // Feature: igtc-esports-website, Property 9: Sponsor click behavior

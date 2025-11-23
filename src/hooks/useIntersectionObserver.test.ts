@@ -6,11 +6,11 @@ import { useIntersectionObserver } from './useIntersectionObserver';
 describe('useIntersectionObserver Hook', () => {
   beforeEach(() => {
     // Mock IntersectionObserver
-    global.IntersectionObserver = vi.fn().mockImplementation((callback) => ({
+    (globalThis as any).IntersectionObserver = vi.fn().mockImplementation(() => ({
       observe: vi.fn(),
       unobserve: vi.fn(),
       disconnect: vi.fn(),
-    })) as any;
+    }));
   });
 
   it('returns a ref and visibility state', () => {

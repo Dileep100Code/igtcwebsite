@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { SponsorsSection, Sponsor } from './SponsorsSection';
+import { SponsorsSection } from './SponsorsSection';
+import type { Sponsor } from './SponsorsSection';
 
 describe('SponsorsSection Component', () => {
   const mockSponsors: Sponsor[] = [

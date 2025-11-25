@@ -116,6 +116,7 @@ export const ServicesSection = () => {
                     />
                     <div className={styles.imageOverlay}>
                       <h3 className={styles.serviceTitle}>{service.title}</h3>
+                      <p className={styles.serviceFrontDescription}>{service.description}</p>
                     </div>
                   </div>
 

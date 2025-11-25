@@ -138,6 +138,14 @@
   color: var(--color-text);
   line-height: 1.2;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  margin-bottom: var(--spacing-sm);
+}
+
+.serviceFrontDescription {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .backTitle {

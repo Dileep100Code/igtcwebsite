@@ -95,18 +95,11 @@ export const Home = () => {
   return (
     <>
       <Hero
-        title="IGTC ESPORTS"
-        subtitle="Elite competitive gaming organization dominating tournaments worldwide. Join our championship teams in Mobile Legends, PUBG Mobile, Free Fire, and more. Professional training, global competitions, and career opportunities await."
         ctaButtons={[
           {
-            text: 'Join Our Team',
-            action: () => console.log('Join clicked'),
+            text: 'Explore More',
+            action: () => console.log('Explore clicked'),
             variant: 'primary'
-          },
-          {
-            text: 'Watch Tournaments',
-            action: () => console.log('Watch clicked'),
-            variant: 'secondary'
           }
         ]}
       />

@@ -4,16 +4,18 @@
   left: 0;
   right: 0;
   z-index: var(--z-fixed);
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
   transition: all var(--transition-base);
-  padding: 1.5rem 0;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav.scrolled {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.75rem 0;
 }
 
 .container {
@@ -28,23 +30,28 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.25rem;
   font-family: var(--font-heading);
-  font-size: var(--font-size-xl);
-  font-weight: 800;
+  font-size: 1.5rem;
+  font-weight: 900;
   text-decoration: none;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.1em;
 }
 
 .logoText {
   color: var(--color-text);
-}
-
-.logoAccent {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  background: linear-gradient(135deg, #FFFFFF, #CCCCCC);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.logoAccent {
+  color: var(--color-text);
+  font-weight: 400;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
 }
 
 .navLinks {
@@ -54,12 +61,14 @@
 }
 
 .navLink {
-  color: var(--color-text-secondary);
-  font-weight: 500;
+  color: var(--color-text);
+  font-weight: 600;
   font-size: var(--font-size-sm);
   padding: 0.5rem 1rem;
   position: relative;
   transition: color var(--transition-base);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .navLink::after {
@@ -69,13 +78,13 @@
   left: 50%;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  background: #FF0000;
   transition: width var(--transition-base), left var(--transition-base);
   border-radius: var(--radius-full);
 }
 
 .navLink:hover {
-  color: var(--color-text);
+  color: #FF0000;
 }
 
 .navLink:hover::after,
@@ -85,44 +94,58 @@
 }
 
 .navLink.active {
-  color: var(--color-text);
+  color: #FF0000;
 }
 
 .navActions {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-md);
 }
 
-.notificationBtn {
-  color: var(--color-text);
-  padding: 0.5rem;
+.searchBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
-  transition: all var(--transition-fast);
-}
-
-.notificationBtn:hover {
-  color: var(--color-primary);
-  background-color: rgba(0, 255, 136, 0.1);
-}
-
-.loginBtn {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-  color: var(--color-background);
-  padding: 0.625rem 1.5rem;
-  border-radius: var(--radius-lg);
-  font-weight: 600;
-  font-size: var(--font-size-sm);
+  color: var(--color-text);
   transition: all var(--transition-base);
-  box-shadow: 0 4px 12px rgba(0, 217, 255, 0.2);
+  cursor: pointer;
 }
 
-.loginBtn:hover {
+.searchBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+.socialIcons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.socialIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+  transition: all var(--transition-base);
+}
+
+.socialIcon:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 217, 255, 0.3);
 }
 
 .hamburger {
@@ -235,5 +258,13 @@
 
   .dropdownItem {
     padding-left: 2rem;
+  }
+
+  .socialIcons {
+    display: none;
+  }
+
+  .searchBtn {
+    display: none;
   }
 }

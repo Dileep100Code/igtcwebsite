@@ -281,29 +281,29 @@
   }
 
   .scrollContainer {
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-md) 0;
   }
 
   .scrollTrack {
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
     padding: 0 1rem;
   }
 
   .serviceCard {
-    width: 300px;
-    height: 440px;
+    width: 320px;
+    height: 480px;
   }
 
   .imageContainer {
-    height: 220px;
+    height: 240px;
   }
 
   .cardInfo {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
   }
 
   .cardBack {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
   }
 
   .title {
@@ -320,37 +320,37 @@
   }
 
   .serviceTitle {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
   }
 
   .serviceFrontDescription {
-    font-size: 0.875rem;
+    font-size: 0.85rem;
   }
 
   .backTitle {
-    font-size: var(--font-size-xl);
-    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-sm);
   }
 
   .backDescription {
-    font-size: 0.9rem;
-    margin-bottom: var(--spacing-lg);
+    font-size: 0.85rem;
+    margin-bottom: var(--spacing-md);
   }
 
   .featureList {
-    gap: 0.75rem;
+    gap: 0.625rem;
   }
 
   .feature {
-    font-size: 0.8rem;
-    gap: 0.625rem;
-    padding: 0.625rem;
+    font-size: 0.75rem;
+    gap: 0.5rem;
+    padding: 0.5rem;
     border-left-width: 2px;
   }
 
   .feature svg {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
   }
 }
 
@@ -360,12 +360,12 @@
   }
 
   .serviceCard {
-    width: 280px;
-    height: 420px;
+    width: 300px;
+    height: 460px;
   }
 
   .imageContainer {
-    height: 200px;
+    height: 220px;
   }
 
   .title {

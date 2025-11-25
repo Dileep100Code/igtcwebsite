@@ -170,7 +170,7 @@
 
 @media (max-width: 768px) {
   .mentors {
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-xl) 0;
   }
 
   .container {
@@ -178,20 +178,66 @@
   }
 
   .header {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
   }
 
   .content {
-    padding: var(--spacing-sm);
-    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    gap: var(--spacing-lg);
   }
 
   .title {
-    font-size: clamp(1.25rem, 6vw, 1.5rem);
+    font-size: clamp(1.5rem, 6vw, 1.75rem);
   }
 
   .subtitle {
+    font-size: 1rem;
+  }
+
+  .phoneFrame {
+    width: 180px;
+    height: 360px;
+  }
+
+  .phoneImage {
+    height: 360px;
+  }
+
+  .detailsSection {
+    padding: 0;
+  }
+
+  .detailsList {
+    gap: 0.75rem;
+  }
+
+  .detailItem {
+    padding-bottom: 0.75rem;
+  }
+
+  .label {
+    font-size: 0.75rem;
+  }
+
+  .value {
     font-size: 0.875rem;
+  }
+
+  .place {
+    font-size: 0.8rem;
+  }
+
+  .note {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    margin-top: 0.35rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: var(--spacing-sm);
+    gap: var(--spacing-md);
   }
 
   .phoneFrame {
@@ -203,56 +249,28 @@
     height: 320px;
   }
 
-  .detailsSection {
-    padding: 0;
-  }
-
-  .detailsList {
-    gap: 0.5rem;
-  }
-
-  .detailItem {
-    padding-bottom: 0.5rem;
-  }
-
-  .label {
-    font-size: 0.65rem;
-  }
-
-  .value {
-    font-size: 0.75rem;
-  }
-
-  .place {
-    font-size: 0.7rem;
-  }
-
-  .note {
-    font-size: 0.65rem;
-    padding: 0.35rem;
-    margin-top: 0.25rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .content {
-    padding: var(--spacing-xs);
-  }
-
-  .phoneFrame {
-    width: 140px;
-    height: 280px;
-  }
-
-  .phoneImage {
-    height: 280px;
-  }
-
   .title {
-    font-size: 1.125rem;
+    font-size: 1.35rem;
   }
 
   .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .label {
+    font-size: 0.7rem;
+  }
+
+  .value {
     font-size: 0.8rem;
+  }
+
+  .place {
+    font-size: 0.75rem;
+  }
+
+  .note {
+    font-size: 0.7rem;
+    padding: 0.4rem;
   }
 }

@@ -38,19 +38,40 @@ export const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  return (
-    <nav className={`${styles.nav} ${isScrolled ? styles.scrolled : ''}`}>
-      <div className={styles.container}>
-        <Link to="/" className={styles.logo}>
-          <span className={styles.logoText}>IGTC</span>
-          <span className={styles.logoAccent}>ESPORTS</span>
-        </Link>
+  const toggleMoreDropdown = () => {
+    setIsMoreOpen(!isMoreOpen);
+  };
 
-        <div className={`${styles.navLinks} ${isMobileMenuOpen ? styles.mobileOpen : ''}`}>
+  return (
+    <>
+      <div 
+        className={`${styles.mobileOverlay} ${isMobileMenuOpen ? styles.visible : ''}`}
+        onClick={() => setIsMobileMenuOpen(false)}
+      />
+      <nav className={`${styles.nav} ${isScrolled ? styles.scrolled : ''}`}>
+        <div className={styles.container}>
+          <Link to="/" className={styles.logo}>
+            <span className={styles.logoText}>IGTC</span>
+            <span className={styles.logoAccent}>ESPORTS</span>
+          </Link>
+
+          <div className={`${styles.navLinks} ${isMobileMenuOpen ? styles.mobileOpen : ''}`}>
           {navLinks.map((link) => (
             <Link
               key={link.path}
@@ -64,12 +85,15 @@ export const Navigation = () => {
           
           <div 
             className={styles.moreDropdown}
-            onMouseEnter={() => setIsMoreOpen(true)}
-            onMouseLeave={() => setIsMoreOpen(false)}
+            onMouseEnter={() => window.innerWidth > 768 && setIsMoreOpen(true)}
+            onMouseLeave={() => window.innerWidth > 768 && setIsMoreOpen(false)}
           >
-            <button className={styles.navLink}>
+            <button 
+              className={styles.navLink}
+              onClick={toggleMoreDropdown}
+            >
               More
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className={styles.dropdownIcon}>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className={`${styles.dropdownIcon} ${isMoreOpen ? styles.rotated : ''}`}>
                 <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
@@ -112,7 +136,7 @@ export const Navigation = () => {
           <button className={styles.loginBtn}>Login</button>
 
           <button 
-            className={styles.hamburger}
+            className={`${styles.hamburger} ${isMobileMenuOpen ? styles.open : ''}`}
             onClick={toggleMobileMenu}
             aria-label="Toggle menu"
           >
@@ -123,5 +147,6 @@ export const Navigation = () => {
         </div>
       </div>
     </nav>
+    </>
   );
 };

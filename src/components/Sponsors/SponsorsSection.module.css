@@ -69,12 +69,67 @@
   max-height: 60px;
 }
 
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sponsorCard.platinum {
+    grid-column: span 3;
+  }
+}
+
 @media (max-width: 768px) {
+  .section {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-md);
+  }
+
   .grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+  }
+
+  .sponsorCard {
+    padding: var(--spacing-sm);
+    min-height: 100px;
   }
 
   .sponsorCard.platinum {
     grid-column: span 2;
+  }
+
+  .logo {
+    max-height: 60px;
+  }
+
+  .sponsorCard.platinum .logo {
+    max-height: 80px;
+  }
+
+  .sponsorCard.gold .logo {
+    max-height: 60px;
+  }
+
+  .sponsorCard.silver .logo {
+    max-height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sponsorCard.platinum {
+    grid-column: span 1;
   }
 }

@@ -156,9 +156,21 @@ ul, ol {
   padding: 0 var(--spacing-lg);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .container {
     padding: 0 var(--spacing-md);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
   }
 }
 
@@ -166,9 +178,21 @@ ul, ol {
   padding: var(--spacing-3xl) 0;
 }
 
+@media (max-width: 1024px) {
+  .section {
+    padding: var(--spacing-2xl) 0;
+  }
+}
+
 @media (max-width: 768px) {
   .section {
     padding: var(--spacing-xl) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: var(--spacing-lg) 0;
   }
 }
 
@@ -220,4 +244,28 @@ ul, ol {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-border);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  /* Better touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Prevent text size adjustment on orientation change */
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Smooth scrolling on mobile */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
 }

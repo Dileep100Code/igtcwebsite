@@ -27,17 +27,28 @@
   gap: var(--spacing-lg);
 }
 
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
   .section {
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-lg) 0;
   }
 
   .container {
-    padding: 0 var(--spacing-md);
+    padding: 0 var(--spacing-sm);
+  }
+
+  .title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-md);
   }
 
   .grid {
     grid-template-columns: 1fr;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
   }
 }

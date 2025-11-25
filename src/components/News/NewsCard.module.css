@@ -87,3 +87,37 @@
 .card:hover .readMore {
   transform: translateX(4px);
 }
+
+@media (max-width: 768px) {
+  .imageContainer {
+    height: 180px;
+  }
+
+  .content {
+    padding: var(--spacing-sm);
+  }
+
+  .title {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .date {
+    font-size: 0.75rem;
+  }
+
+  .preview {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-sm);
+    -webkit-line-clamp: 2;
+  }
+
+  .readMore {
+    font-size: var(--font-size-sm);
+  }
+
+  .category {
+    padding: 0.25rem 0.625rem;
+    font-size: 0.65rem;
+  }
+}

@@ -39,3 +39,41 @@
 .homeLink:hover {
   transform: translateY(-4px);
 }
+
+@media (max-width: 768px) {
+  .page {
+    padding-top: 70px;
+  }
+
+  .container {
+    padding: var(--spacing-md) 1rem;
+  }
+
+  .title {
+    font-size: clamp(3rem, 12vw, 6rem);
+  }
+
+  .message {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .homeLink {
+    padding: 0.875rem 1.5rem;
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: clamp(2.5rem, 15vw, 4rem);
+  }
+
+  .message {
+    font-size: var(--font-size-sm);
+  }
+
+  .homeLink {
+    padding: 0.75rem 1.25rem;
+  }
+}

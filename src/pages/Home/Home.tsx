@@ -1,4 +1,5 @@
 import { Hero } from '../../components/Hero/Hero';
+import { ServicesSection } from '../../components/Services/ServicesSection';
 import { NewsSection } from '../../components/News/NewsSection';
 import { SponsorsSection } from '../../components/Sponsors/SponsorsSection';
 import { CollaborationsSection } from '../../components/Collaborations/CollaborationsSection';
@@ -103,6 +104,7 @@ export const Home = () => {
           }
         ]}
       />
+      <ServicesSection />
       <NewsSection news={mockNews} />
       <SponsorsSection sponsors={mockSponsors} />
       <CollaborationsSection collaborations={mockCollaborations} />

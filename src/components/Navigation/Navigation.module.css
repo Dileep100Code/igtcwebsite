@@ -123,29 +123,44 @@
   transform: scale(1.05);
 }
 
-.socialIcons {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.socialIcon {
+.notificationBtn {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color-text);
   transition: all var(--transition-base);
+  cursor: pointer;
+  position: relative;
 }
 
-.socialIcon:hover {
-  background: rgba(255, 255, 255, 0.2);
+.notificationBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+.loginBtn {
+  background: #FF0000;
+  color: #FFFFFF;
+  padding: 0.625rem 1.5rem;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.loginBtn:hover {
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.5);
+  background: #CC0000;
 }
 
 .hamburger {
@@ -260,11 +275,11 @@
     padding-left: 2rem;
   }
 
-  .socialIcons {
+  .searchBtn {
     display: none;
   }
 
-  .searchBtn {
+  .notificationBtn {
     display: none;
   }
 }

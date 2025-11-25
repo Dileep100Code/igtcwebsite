@@ -1,178 +1,42 @@
 .mentors {
   position: relative;
-  padding: var(--spacing-4xl) 0;
-  background: var(--color-background);
+  padding: var(--spacing-3xl) 0;
+  background: #000000;
   overflow: hidden;
 }
 
 .container {
   position: relative;
   z-index: 1;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--spacing-lg);
 }
 
 .header {
-  text-align: center;
-  margin-bottom: var(--spacing-3xl);
-}
-
-.badge {
-  display: inline-block;
-  padding: 0.5rem 1.25rem;
-  background: rgba(255, 215, 0, 0.1);
-  border: 1px solid rgba(255, 215, 0, 0.3);
-  border-radius: var(--radius-full);
-  color: #FFD700;
-  font-size: var(--font-size-sm);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-2xl);
 }
 
 .title {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
-  margin-bottom: var(--spacing-md);
-  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #FFD700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.subtitle {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-secondary);
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-
-
-.mentorCard {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.9) 100%);
-  border: 1px solid rgba(255, 215, 0, 0.2);
-  border-radius: var(--radius-2xl);
-  padding: var(--spacing-3xl);
-  transition: all var(--transition-base);
-  position: relative;
-  overflow: hidden;
-}
-
-.mentorCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #FFD700, #FFA500);
-  opacity: 0;
-  transition: opacity var(--transition-base);
-}
-
-.mentorCard:hover {
-  border-color: rgba(255, 215, 0, 0.5);
-  box-shadow: 0 20px 60px rgba(255, 215, 0, 0.2);
-}
-
-.mentorCard:hover::before {
-  opacity: 1;
-}
-
-.cardLayout {
+.content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 350px 1fr;
   gap: var(--spacing-3xl);
   align-items: center;
+  background: linear-gradient(135deg, rgba(20, 20, 20, 0.9) 0%, rgba(10, 10, 10, 0.95) 100%);
+  border: 2px solid #FF0000;
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-2xl);
 }
 
-.detailsSection {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-lg);
-}
-
-.sectionTitle {
-  font-size: var(--font-size-3xl);
-  font-weight: 800;
-  color: #FFD700;
-  margin-bottom: var(--spacing-md);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.detailItem {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.label {
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  color: #FFD700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.value {
-  font-size: var(--font-size-lg);
-  color: var(--color-text);
-  font-weight: 500;
-  line-height: 1.4;
-}
-
-.achievementBox {
-  background: rgba(255, 215, 0, 0.1);
-  border: 2px solid #FFD700;
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
-  margin: var(--spacing-md) 0;
-}
-
-.achievementLabel {
-  font-size: var(--font-size-2xl);
-  font-weight: 900;
-  color: #FFD700;
-  display: block;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.achievementPlace {
-  font-size: var(--font-size-lg);
-  color: var(--color-text);
-  font-weight: 600;
-  display: block;
-  margin-bottom: var(--spacing-sm);
-}
-
-.achievementNote {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-  line-height: 1.5;
-  padding: var(--spacing-sm);
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: var(--radius-md);
-  border-left: 3px solid #FFD700;
-}
-
-.additionalAchievement {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--spacing-sm);
-  padding: var(--spacing-md);
-  background: rgba(255, 215, 0, 0.05);
-  border-radius: var(--radius-md);
-  border-left: 3px solid #FFA500;
-}
-
-.imageSection {
+.phoneSection {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -180,36 +44,25 @@
 
 .phoneMockup {
   position: relative;
-  perspective: 1000px;
 }
 
 .phoneFrame {
-  width: 320px;
-  height: 600px;
-  background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(10, 10, 10, 0.95));
-  border-radius: 2.5rem;
-  padding: 0.75rem;
+  width: 280px;
+  height: 550px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  border-radius: 2rem;
+  padding: 0.6rem;
   box-shadow: 
-    0 40px 100px rgba(255, 215, 0, 0.3),
-    0 0 0 1px rgba(255, 215, 0, 0.2),
-    inset 0 0 0 1px rgba(255, 215, 0, 0.1);
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+    0 20px 60px rgba(255, 0, 0, 0.3),
+    0 0 0 2px #FF0000,
+    inset 0 0 0 1px rgba(255, 0, 0, 0.2);
 }
 
 .phoneScreen {
   width: 100%;
   height: 100%;
-  background: var(--color-background);
-  border-radius: 2rem;
+  background: #000000;
+  border-radius: 1.5rem;
   overflow: hidden;
   position: relative;
 }
@@ -222,108 +75,73 @@
 
 .phoneImage {
   width: 100%;
-  height: 600px;
+  height: 550px;
   object-fit: cover;
   flex-shrink: 0;
 }
 
-.backgroundElements {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  overflow: hidden;
+.detailsSection {
+  padding: var(--spacing-lg);
 }
 
-.gradientOrb1 {
-  position: absolute;
-  top: 20%;
-  left: -10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(255, 215, 0, 0.08) 0%, transparent 70%);
-  border-radius: 50%;
-  filter: blur(60px);
-  animation: float 20s ease-in-out infinite;
+.detailsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
 }
 
-.gradientOrb2 {
-  position: absolute;
-  bottom: 20%;
-  right: -10%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(255, 165, 0, 0.06) 0%, transparent 70%);
-  border-radius: 50%;
-  filter: blur(60px);
-  animation: float 25s ease-in-out infinite reverse;
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid rgba(255, 0, 0, 0.2);
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(50px, -50px) scale(1.1);
-  }
-  66% {
-    transform: translate(-30px, 30px) scale(0.9);
-  }
+.detailItem:last-child {
+  border-bottom: none;
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: #FFD700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.value {
+  font-size: var(--font-size-lg);
+  color: #FFFFFF;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.place {
+  font-size: var(--font-size-base);
+  color: #FFFFFF;
+  font-weight: 600;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.note {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+  padding: var(--spacing-sm);
+  background: rgba(255, 0, 0, 0.1);
+  border-radius: var(--radius-md);
+  border-left: 3px solid #FF0000;
+  display: block;
+  margin-top: 0.5rem;
 }
 
 @media (max-width: 1024px) {
-  .cardLayout {
+  .content {
     grid-template-columns: 1fr;
     gap: var(--spacing-2xl);
-  }
-
-  .phoneFrame {
-    width: 280px;
-    height: 560px;
-  }
-
-  .phoneImage {
-    height: 560px;
-  }
-
-  .sectionTitle {
-    font-size: var(--font-size-2xl);
-  }
-}
-
-@media (max-width: 768px) {
-  .mentors {
-    padding: var(--spacing-3xl) 0;
-  }
-
-  .mentorCard {
-    padding: var(--spacing-xl);
-  }
-
-  .cardLayout {
-    gap: var(--spacing-xl);
-  }
-
-  .sectionTitle {
-    font-size: var(--font-size-xl);
-  }
-
-  .title {
-    font-size: clamp(2rem, 8vw, 2.5rem);
-  }
-
-  .subtitle {
-    font-size: var(--font-size-base);
-  }
-
-  .value {
-    font-size: var(--font-size-base);
-  }
-
-  .achievementLabel {
-    font-size: var(--font-size-xl);
   }
 
   .phoneFrame {
@@ -333,5 +151,41 @@
 
   .phoneImage {
     height: 520px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mentors {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .content {
+    padding: var(--spacing-lg);
+    gap: var(--spacing-xl);
+  }
+
+  .title {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .phoneFrame {
+    width: 240px;
+    height: 480px;
+  }
+
+  .phoneImage {
+    height: 480px;
+  }
+
+  .detailsSection {
+    padding: 0;
+  }
+
+  .value {
+    font-size: var(--font-size-base);
+  }
+
+  .label {
+    font-size: var(--font-size-xs);
   }
 }

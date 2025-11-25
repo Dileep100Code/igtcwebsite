@@ -32,92 +32,79 @@ export const MentorsSection = () => {
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <span className={styles.badge}>Our Mentors</span>
           <h2 className={styles.title}>Our eFootball Athlete</h2>
-          <p className={styles.subtitle}>
-            Meet our elite esports athletes who represent India on the global stage
-          </p>
         </motion.div>
 
         <motion.div
-          className={styles.mentorCard}
+          className={styles.content}
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <div className={styles.cardLayout}>
-            {/* Left side - Details */}
-            <div className={styles.detailsSection}>
-              <h3 className={styles.sectionTitle}>Our eFootball Athlete</h3>
-              
-              <div className={styles.detailItem}>
-                <span className={styles.label}>NAME:</span>
-                <span className={styles.value}>{mentorData.name} "{mentorData.nickname}" {mentorData.fullName}</span>
-              </div>
-
-              <div className={styles.detailItem}>
-                <span className={styles.label}>GAME NAME:</span>
-                <span className={styles.value}>{mentorData.gameName}</span>
-              </div>
-
-              <div className={styles.detailItem}>
-                <span className={styles.label}>TOURNAMENT:</span>
-                <span className={styles.value}>{mentorData.tournament}</span>
-              </div>
-
-              <div className={styles.detailItem}>
-                <span className={styles.label}>DATE:</span>
-                <span className={styles.value}>{mentorData.date}</span>
-              </div>
-
-              <div className={styles.achievementBox}>
-                <span className={styles.achievementLabel}>{mentorData.achievement}</span>
-                <span className={styles.achievementPlace}>{mentorData.place}</span>
-                <p className={styles.achievementNote}>{mentorData.achievementNote}</p>
-              </div>
-
-              <div className={styles.additionalAchievement}>
-                <span className={styles.label}>•</span>
-                <span className={styles.value}>{mentorData.additionalAchievement}</span>
-              </div>
-            </div>
-
-            {/* Right side - Phone Mockup with Scrolling Images */}
-            <div className={styles.imageSection}>
-              <div className={styles.phoneMockup}>
-                <div className={styles.phoneFrame}>
-                  <div className={styles.phoneScreen}>
-                    <motion.div 
-                      className={styles.imageSlider}
-                      animate={{ y: [0, -1200] }}
-                      transition={{ 
-                        duration: 15,
-                        repeat: Infinity,
-                        ease: "linear"
-                      }}
-                    >
-                      {/* Duplicate images for seamless loop */}
-                      {[...mentorImages, ...mentorImages].map((image, index) => (
-                        <img 
-                          key={index}
-                          src={image} 
-                          alt={`${mentorData.nickname} ${index + 1}`}
-                          className={styles.phoneImage}
-                        />
-                      ))}
-                    </motion.div>
-                  </div>
+          {/* Left side - Phone Mockup */}
+          <div className={styles.phoneSection}>
+            <div className={styles.phoneMockup}>
+              <div className={styles.phoneFrame}>
+                <div className={styles.phoneScreen}>
+                  <motion.div 
+                    className={styles.imageSlider}
+                    animate={{ y: [0, -1200] }}
+                    transition={{ 
+                      duration: 15,
+                      repeat: Infinity,
+                      ease: "linear"
+                    }}
+                  >
+                    {[...mentorImages, ...mentorImages].map((image, index) => (
+                      <img 
+                        key={index}
+                        src={image} 
+                        alt={`${mentorData.nickname} ${index + 1}`}
+                        className={styles.phoneImage}
+                      />
+                    ))}
+                  </motion.div>
                 </div>
               </div>
             </div>
           </div>
-        </motion.div>
-      </div>
 
-      {/* Background Elements */}
-      <div className={styles.backgroundElements}>
-        <div className={styles.gradientOrb1} />
-        <div className={styles.gradientOrb2} />
+          {/* Right side - Compact Details */}
+          <div className={styles.detailsSection}>
+            <ul className={styles.detailsList}>
+              <li className={styles.detailItem}>
+                <span className={styles.label}>NAME:</span>
+                <span className={styles.value}>{mentorData.name} "{mentorData.nickname}" {mentorData.fullName}</span>
+              </li>
+
+              <li className={styles.detailItem}>
+                <span className={styles.label}>GAME NAME:</span>
+                <span className={styles.value}>{mentorData.gameName}</span>
+              </li>
+
+              <li className={styles.detailItem}>
+                <span className={styles.label}>TOURNAMENT:</span>
+                <span className={styles.value}>{mentorData.tournament}</span>
+              </li>
+
+              <li className={styles.detailItem}>
+                <span className={styles.label}>DATE:</span>
+                <span className={styles.value}>{mentorData.date}</span>
+              </li>
+
+              <li className={styles.detailItem}>
+                <span className={styles.label}>{mentorData.achievement}</span>
+                <span className={styles.place}>{mentorData.place}</span>
+                <span className={styles.note}>{mentorData.achievementNote}</span>
+              </li>
+
+              <li className={styles.detailItem}>
+                <span className={styles.label}>•</span>
+                <span className={styles.value}>{mentorData.additionalAchievement}</span>
+              </li>
+            </ul>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -218,35 +218,46 @@
 
   .container {
     padding: 0 1rem;
+    min-height: 100vh;
+  }
+
+  .content {
+    padding: 0;
   }
 
   .title {
-    font-size: clamp(1.75rem, 7vw, 2.5rem);
-    margin-bottom: var(--spacing-md);
+    font-size: clamp(1.5rem, 8vw, 2.25rem);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.2;
     text-shadow: 
-      0 0 15px rgba(255, 255, 255, 0.4),
-      0 0 30px rgba(0, 217, 255, 0.3),
-      2px 2px 4px rgba(0, 0, 0, 0.9);
+      0 0 20px rgba(255, 255, 255, 0.5),
+      0 0 40px rgba(0, 217, 255, 0.4),
+      2px 2px 6px rgba(0, 0, 0, 0.9);
   }
 
   .ctaButtons {
     flex-direction: column;
     width: 100%;
-    max-width: 280px;
+    max-width: 100%;
     margin: 0 auto;
-    margin-top: var(--spacing-md);
+    margin-top: var(--spacing-lg);
     gap: var(--spacing-sm);
   }
 
   .ctaButton {
     width: 100%;
-    padding: 0.875rem 1.5rem;
-    font-size: var(--font-size-sm);
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 700;
   }
 
   .navArrow {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
   }
 
   .navArrowLeft {
@@ -258,30 +269,36 @@
   }
 
   .slideIndicators {
-    bottom: 1.5rem;
-    gap: 0.625rem;
+    bottom: 2rem;
+    gap: 0.5rem;
   }
 
   .indicator {
-    width: 8px;
-    height: 8px;
-    border-width: 1px;
+    width: 10px;
+    height: 10px;
+    border-width: 2px;
   }
 }
 
 @media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
   .title {
-    font-size: clamp(1.5rem, 8vw, 2rem);
+    font-size: clamp(1.25rem, 9vw, 1.875rem);
+    margin-bottom: var(--spacing-md);
   }
 
   .ctaButton {
-    padding: 0.75rem 1.25rem;
-    font-size: 0.8rem;
+    padding: 0.875rem 1.75rem;
+    font-size: 0.85rem;
+    max-width: 280px;
   }
 
   .navArrow {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
   }
 
   .navArrowLeft {
@@ -290,5 +307,14 @@
 
   .navArrowRight {
     right: 0.25rem;
+  }
+
+  .slideIndicators {
+    bottom: 1.5rem;
+  }
+
+  .indicator {
+    width: 8px;
+    height: 8px;
   }
 }

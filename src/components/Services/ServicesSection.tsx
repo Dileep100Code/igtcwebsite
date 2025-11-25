@@ -109,12 +109,15 @@ export const ServicesSection = () => {
                 <div className={`${styles.cardInner} ${flippedCard === `${service.id}-${index}` ? styles.flipped : ''}`}>
                   {/* Front of card - Image */}
                   <div className={styles.cardFront}>
-                    <img 
-                      src={service.image} 
-                      alt={service.title}
-                      className={styles.serviceImage}
-                    />
-                    <div className={styles.imageOverlay}>
+                    <div className={styles.imageContainer}>
+                      <img 
+                        src={service.image} 
+                        alt={service.title}
+                        className={styles.serviceImage}
+                      />
+                      <div className={styles.imageOverlay} />
+                    </div>
+                    <div className={styles.cardInfo}>
                       <h3 className={styles.serviceTitle}>{service.title}</h3>
                       <p className={styles.serviceFrontDescription}>{service.description}</p>
                     </div>

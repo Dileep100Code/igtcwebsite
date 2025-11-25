@@ -32,7 +32,8 @@ export const MentorsSection = () => {
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.title}>Our eFootball Athlete</h2>
+          <h2 className={styles.title}>Our Mentors</h2>
+          <p className={styles.subtitle}>Our eFootball Athlete</p>
         </motion.div>
 
         <motion.div

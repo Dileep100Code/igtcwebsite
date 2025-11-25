@@ -59,6 +59,7 @@ const services: Service[] = [
 export const ServicesSection = () => {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
   const [flippedCard, setFlippedCard] = useState<string | null>(null);
+  const [isPaused, setIsPaused] = useState(false);
 
   return (
     <section className={styles.services} ref={ref}>
@@ -80,13 +81,13 @@ export const ServicesSection = () => {
           <motion.div
             className={styles.scrollTrack}
             animate={{
-              x: [0, -2400]
+              x: isPaused ? undefined : [0, -3000]
             }}
             transition={{
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 30,
+                duration: 40,
                 ease: "linear"
               }
             }}
@@ -96,8 +97,14 @@ export const ServicesSection = () => {
               <div
                 key={`${service.id}-${index}`}
                 className={styles.serviceCard}
-                onMouseEnter={() => setFlippedCard(`${service.id}-${index}`)}
-                onMouseLeave={() => setFlippedCard(null)}
+                onMouseEnter={() => {
+                  setFlippedCard(`${service.id}-${index}`);
+                  setIsPaused(true);
+                }}
+                onMouseLeave={() => {
+                  setFlippedCard(null);
+                  setIsPaused(false);
+                }}
               >
                 <div className={`${styles.cardInner} ${flippedCard === `${service.id}-${index}` ? styles.flipped : ''}`}>
                   {/* Front of card - Image */}
